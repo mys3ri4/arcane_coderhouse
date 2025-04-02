@@ -36,7 +36,7 @@ body {
 }
 #personajes span:hover {
   background-color: #0078FF;
-  color: #0078FF;
+  color: #ffffff;
   text-align: center;
   font-size: 1.3rem;
   border-radius: 1rem;
@@ -93,7 +93,7 @@ iframe {
   transition: color 0.3s ease;
 }
 .contact-item a:hover {
-  color: #0078FF;
+  color: #ffffff;
 }
 
 .social-links {
