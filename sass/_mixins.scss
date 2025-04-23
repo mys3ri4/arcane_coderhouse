@@ -1,0 +1,6 @@
+@mixin font_size_mixin($size) {
+    font-size: $size;
+    @media (max-width: 768px) {
+      font-size: $size * 0.8;
+    }
+  }

@@ -1,31 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 // Variables
-$primary-color: #f5f5db;
-$background-color: #4aafd4;
-$dark-color: #373636;
-$banner-bg: rgba(0, 0, 0, 0.7);
-$hover-bg: #0078FF;
-$hover-color: #ffffff;
-$highlight-color: #ffcc00;
-$contact-bg: #222;
-$contact-info-bg: #0A74DA;
-$contact-form-bg: #1b1b1b;
-$button-bg: #FF007F;
-$button-hover-bg: #DA005B;
-$shadow-color: rgba(10, 116, 218, 0.5);
-$transition-time: 0.3s;
-$primary-bg-color: #0A74DA;
-$secondary-bg-color: #1b1b1b;
-$text-color: white;
-$accent-color: #FF007F;
-$box-shadow-color: rgba(10, 116, 218, 0.5);
-$input-bg-color: #333;
-$input-border-color: #fff;
-$transition-time: 0.5s;
-$shadow-color: rgba(10, 116, 218, 0.7);
-$scale-factor: 1.2;
-$rotate-angle: 10deg;
+@import "variables.scss";
+@import "mixins.scss";
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -36,7 +13,7 @@ body {
   color: $dark-color;
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  @include font_size_mixin(20px);
 }
 
 #banner {
@@ -54,7 +31,7 @@ body {
   color: $dark-color;
   background-color: $primary-color;
   padding: 0.7rem 3rem;
-  font-size: 1.2rem;
+  @include font_size_mixin(1.2rem);
   text-transform: capitalize;
   border-radius: 2rem;
   cursor: pointer;
@@ -65,7 +42,7 @@ body {
     background-color: $hover-bg;
     color: $hover-color;
     text-align: center;
-    font-size: 1.3rem;
+    @include font_size_mixin(1.3rem);
     border-radius: 1rem;
   }
 }
@@ -85,12 +62,12 @@ iframe {
   border-radius: 12px;
   text-align: justify;
   h2 {
-    font-size: 30px;
+    @include font_size_mixin(30px);
     color: $highlight-color;
   }
   p {
     line-height: 1.5;
-    font-size: 20px;
+    @include font_size_mixin(20px);
   }
   strong {
     color: $hover-bg;
@@ -107,11 +84,11 @@ iframe {
   flex: 1;
   padding: 0 20px;
   h3 {
-    font-size: 1.8rem;
+    @include font_size_mixin(1.8rem);
     margin-bottom: 10px;
   }
   p {
-    font-size: 1.2rem;
+    @include font_size_mixin(1.2rem);
     margin: 5px 0;
   }
   a {
@@ -130,7 +107,7 @@ iframe {
   gap: 15px;
   margin-top: 10px;
   a {
-    font-size: 2rem;
+    @include font_size_mixin(2rem);
     color: $primary-color;
     transition: color 0.6s ease;
     &:hover {
@@ -148,40 +125,30 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   .contact-section {
     display: flex;
-    width: 80%;
     max-width: 900px;
     background: #222;
     border-radius: 10px;
     box-shadow: 0 0 15px $box-shadow-color;
     overflow: hidden;
     .contact-info {
-      width: 40%;
       background-color: $primary-bg-color;
       color: $text-color;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
+      padding: 10px;
       text-align: center;
       h2 {
-        font-size: 37px;
+        @include font_size_mixin(37px);
         margin-bottom: 10px;
       }
       p {
-        font-size: 24px;
+        @include font_size_mixin(24px);
         line-height: 1.5;
       }
     }
     .contact-form {
-      width: 60%;
-      padding: 40px;
+      padding: 10px;
       background-color: $secondary-bg-color;
-      display: flex;
-      flex-direction: column;
       h2 {
         font-size: 31px;
         margin-bottom: 20px;
@@ -260,7 +227,6 @@ iframe {
     transition: opacity $transition-time ease;
     opacity: 0;
   }
-
   &:hover::after {
     opacity: 1;
   }
