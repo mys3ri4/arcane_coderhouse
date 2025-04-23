@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+// Variables
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #acdff5;
+  color: $dark-color;
+  margin: 0;
+  padding: 0;
+  @include font_size_mixin(20px);
+}
+
+#banner {
+  padding: 30px 20px;
+  background-color: $banner-bg;
+  color: white;
+}
+
+.content-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+#personajes span {
+  color: $dark-color;
+  background-color: $primary-color;
+  padding: 0.7rem 3rem;
+  @include font_size_mixin(1.2rem);
+  text-transform: capitalize;
+  border-radius: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: all 1s ease;
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-color;
+    text-align: center;
+    @include font_size_mixin(1.3rem);
+    border-radius: 1rem;
+  }
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  border-radius: 8px;
+}
+
+.sinopsis {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: justify;
+  h2 {
+    @include font_size_mixin(30px);
+    color: $highlight-color;
+  }
+  p {
+    line-height: 1.5;
+    @include font_size_mixin(20px);
+  }
+  strong {
+    color: $hover-bg;
+  }
+}
+
+.footer-contact {
+  background-color: $dark-color;
+  color: $primary-color;
+}
+
+.contact-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 20px;
+  h3 {
+    @include font_size_mixin(1.8rem);
+    margin-bottom: 10px;
+  }
+  p {
+    @include font_size_mixin(1.2rem);
+    margin: 5px 0;
+  }
+  a {
+    text-decoration: none;
+    color: $hover-bg;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  a {
+    @include font_size_mixin(2rem);
+    color: $primary-color;
+    transition: color 0.6s ease;
+    &:hover {
+      color: $hover-bg;
+    }
+  }
+}
+
+#contacto {
+  background: url('../img/c7714b7c8d3418f58f0aa251cae1b105.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: $text-color;
+  margin: 60px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact-section {
+    display: flex;
+    max-width: 900px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 15px $box-shadow-color;
+    overflow: hidden;
+    .contact-info {
+      background-color: $primary-bg-color;
+      color: $text-color;
+      padding: 10px;
+      text-align: center;
+      h2 {
+        @include font_size_mixin(37px);
+        margin-bottom: 10px;
+      }
+      p {
+        @include font_size_mixin(24px);
+        line-height: 1.5;
+      }
+    }
+    .contact-form {
+      padding: 10px;
+      background-color: $secondary-bg-color;
+      h2 {
+        font-size: 31px;
+        margin-bottom: 20px;
+        color: $accent-color;
+        text-align: center;
+      }
+      .input-group {
+        margin-bottom: 15px;
+        label {
+          font-size: 22px;
+          color: #ccc;
+          display: block;
+          margin-bottom: 5px;
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid $input-border-color;
+          background: $input-bg-color;
+          color: $text-color;
+          font-size: 16px;
+        }
+        textarea {
+          resize: none;
+        }
+      }
+    }
+  }
+}
+
+.bg-primary {
+  background-color: #193b60 !important;
+}
+
+#personajes {
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    transition: filter $transition-time ease;
+    &:hover {
+      filter: blur(3px);
+    }
+  }
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform $transition-time ease, filter $transition-time ease, box-shadow $transition-time ease;
+  }
+  &:hover img {
+    transform: scale($scale-factor) rotate($rotate-angle);
+    filter: brightness(1.2) blur(2px);
+    box-shadow: 0 0 15px $shadow-color;
+  }
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: translateY(-10px);
+    }
+  }
+  &:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    transition: opacity $transition-time ease;
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
